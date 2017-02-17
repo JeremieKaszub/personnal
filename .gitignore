@@ -62,3 +62,13 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+
+# Dependency managment
+/node_modules/
+/app/Resources/lib
+/.tmp
+/.sass-cache
+/node_modules/
+/app/Resources/lib
+/web/built
+/web/fonts

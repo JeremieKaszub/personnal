@@ -1,0 +1,86 @@
+module.exports = function(grunt) {
+
+    require('load-grunt-tasks')(grunt);
+
+
+    grunt.initConfig({
+        compass: {
+            sass: {
+                options: {
+                    sassDir: 'src/AppBundle/Resources/styles',
+                    cssDir: '.tmp/css',
+                    importPath: 'app/Resources/lib',
+                    outputStyle: 'expanded',
+                    noLineComments: true
+                }
+            }
+        },
+        typescript: {
+            base: {
+                src: ['src/AppBundle/Resources/scripts/*ts'],
+                dest: '.tmp/js',
+                options: {
+                    target: 'es6', //or es3
+                    module: 'amd', //or commonjs
+                    sourceMap: true,
+                    declaration: true
+                }
+            }
+        },
+        cssmin: {
+            combine: {
+                options:{
+                    report: 'gzip',
+                    keepSpecialComments: 0
+                },
+                files: {
+                    'web/built/min.css': [
+                        '.tmp/css/**/*.css',
+                        'app/Resources/lib/Fontello/fontello-codes.css'
+                    ]
+                }
+            }
+        },
+        watch: {
+            css: {
+                files: ['src/AppBundle/Resources/styles/**/*.scss'],
+                tasks: ['css']
+            },
+            javascript: {
+                files: ['src/AppBundle/Resources/scripts/*.ts'],
+                tasks: ['javascript']
+            }
+        },
+        uglify: {
+            options: {
+                mangle: false,
+                sourceMap: true,
+                sourceMapName: 'web/built/app.map'
+            },
+            dist: {
+                files: {
+                    'web/built/app.min.js':[
+                        'app/Resources/lib/jquery/jquery.js',
+                        'app/Resources/lib/bootstrap-sass-official/asset/javascripts/bootstrap.js',
+                        '.tmp/js/**/*.js'
+                    ]
+                }
+            }
+        },
+        copy: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/Resources/lib/fontello/fonts',
+                    dest: 'web/fonts',
+                    src: ['**']
+                }]
+            }
+        }
+    });
+
+    grunt.registerTask('default', ['css','javascript']);
+    grunt.registerTask('javascript', ['typescript', 'uglify']);
+    grunt.registerTask('css', ['compass','cssmin']);
+    grunt.registerTask('cp', ['copy']);
+};
