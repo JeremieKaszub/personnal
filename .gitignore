@@ -72,3 +72,5 @@
 /app/Resources/lib
 /web/built
 /web/fonts
+
+.idea
