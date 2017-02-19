@@ -1,0 +1,47 @@
+.jk-header {
+    @include container-fluid;
+    
+    height: $jk-header-height;
+    
+    &__nav {
+        background-color: $jk-header-bg;
+        
+        &__container {
+            @include container;
+            
+            &__navbar-header {
+                &__link {
+                    font-family: 'robotoblack';
+                }
+            }
+            
+            &__collapse {
+                &__list {
+                    &__item {
+                        &__link {
+                            position: relative;
+                            
+                            &::after {
+                                transition: $jk-default-transition;
+                                margin-left: 5px;
+                                font-family: 'fontello';
+                                content: '\e9b5';
+                                opacity: 0;
+                                
+                                @media(min-width: $screen-sm-min) {
+                                    
+                                }
+                            }
+                            
+                            &:hover {
+                                &::after {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
