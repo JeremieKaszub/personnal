@@ -1,0 +1,98 @@
+body {
+	margin: 0;
+	font-family: $jk-default-font-family;
+}
+
+// Bootstrap's Navbar overwrites
+
+.navbar-default {
+	.navbar-brand {
+		transition: $jk-default-transition;
+		color: $jk-header-logo-link-color;
+		
+		&:hover {
+			color: $jk-header-logo-link-color-hover;
+		}
+		
+		&:focus {
+			color: $jk-header-logo-link-color;
+		}
+	}
+}
+
+.navbar-default {
+	.navbar-nav>li>a {
+		transition: $jk-default-transition;
+		color: $jk-header-menu-link-color;
+		
+		&:hover {
+			color: $jk-header-menu-link-color-hover;
+		}
+		
+		&:focus {
+			color: $jk-header-menu-link-color;
+		}
+	}
+}
+
+.navbar-default {
+	.navbar-toggle {
+		transition: $jk-default-transition;
+		padding-left: 16px;
+		border-color: $jk-header-menu-toggle-border-color;
+		
+		&:hover {
+			background-color: $jk-header-menu-toggle-color-hover;
+			border-color: $jk-header-menu-toggle-border-color-hover;
+		}
+		
+		&:focus {
+			background-color: $jk-header-menu-toggle-color;
+			border-color: $jk-header-menu-toggle-border-color;
+			
+			&:hover {
+				background-color: $jk-header-menu-toggle-color-hover;
+				border-color: $jk-header-menu-toggle-border-color-hover;
+			}
+		}
+		
+		.icon-bar {
+			transition: $jk-default-transition;
+			background-color: $jk-header-menu-toggle-bar-color;
+			
+			&:focus {
+				background-color: $jk-header-menu-toggle-bar-color;
+			}
+			
+			&.top-bar {
+				transform: rotate(45deg);
+				transform-origin: 10% 10%;
+			}
+			
+			&.middle-bar {
+				opacity: 0;
+			}
+			
+			&.bottom-bar {
+				transform: rotate(-45deg);
+				transform-origin: 10% 90%;
+			}
+		}
+		
+		&.collapsed {
+			padding-left: 10px;
+			
+			.top-bar {
+				transform: rotate(0);
+			}
+			
+			.middle-bar {
+				opacity: 1;
+			}
+			
+			.bottom-bar {
+				transform: rotate(0);
+			}
+		}
+	}
+}

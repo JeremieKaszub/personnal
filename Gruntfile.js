@@ -15,18 +15,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        typescript: {
-            base: {
-                src: ['src/AppBundle/Resources/scripts/*ts'],
-                dest: '.tmp/js',
-                options: {
-                    target: 'es6', //or es3
-                    module: 'amd', //or commonjs
-                    sourceMap: true,
-                    declaration: true
-                }
-            }
-        },
         cssmin: {
             combine: {
                 options:{
@@ -47,7 +35,7 @@ module.exports = function(grunt) {
                 tasks: ['css']
             },
             javascript: {
-                files: ['src/AppBundle/Resources/scripts/*.ts'],
+                files: ['src/AppBundle/Resources/scripts/*.js'],
                 tasks: ['javascript']
             }
         },
@@ -60,8 +48,9 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     'web/built/app.min.js':[
-                        'app/Resources/lib/jquery/jquery.js',
-                        'app/Resources/lib/bootstrap-sass-official/asset/javascripts/bootstrap.js',
+                        'app/Resources/lib/jquery/dist/jquery.js',
+                        'app/Resources/lib/bootstrap-sass-official/assets/javascripts/bootstrap.js',
+                        'src/AppBundle/Resources/scripts/index.js',
                         '.tmp/js/**/*.js'
                     ]
                 }
@@ -69,18 +58,20 @@ module.exports = function(grunt) {
         },
         copy: {
             dist: {
-                files: [{
-                    expand: true,
-                    cwd: 'app/Resources/lib/fontello/fonts',
-                    dest: 'web/fonts',
-                    src: ['**']
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'app/Resources/lib/fontello/fonts',
+                        dest: 'web/fonts',
+                        src: ['**']
+                    }
+                ]
             }
         }
     });
 
     grunt.registerTask('default', ['css','javascript']);
-    grunt.registerTask('javascript', ['typescript', 'uglify']);
+    grunt.registerTask('javascript', ['uglify']);
     grunt.registerTask('css', ['compass','cssmin']);
     grunt.registerTask('cp', ['copy']);
 };

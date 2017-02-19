@@ -1,0 +1,33 @@
+// General variables
+//******************
+//
+// Colors
+$white-spring-wood: #f3f6ee;
+$white-rose: #fff7f6;
+$grey-michka: #dad4dc;
+$green-chelsea-cucumber : #85aF4b;
+$brown-fuzzy-wuzzy : #bf6352;
+$pruple-eminence: #6f397e;
+$grey-masala: #3d3837;
+$grey-heavy-metal: #363832;
+$grey-baltic-sea: #282529;
+//
+// Fonts
+$jk-default-font-family:  "robotoregular";
+//
+// Animations
+$jk-default-transition: all .32s;
+//
+// Header
+$jk-header-bg: $green-chelsea-cucumber;
+$jk-header-height: 50px;
+$jk-header-logo-link-color: $white-spring-wood;
+$jk-header-logo-link-color-hover: darken($white-spring-wood, 10%);
+$jk-header-menu-link-color-hover: darken($white-spring-wood, 10%);
+$jk-header-menu-link-color: $white-spring-wood;
+$jk-header-menu-toggle-border-color: $green-chelsea-cucumber;
+$jk-header-menu-toggle-border-color-hover: darken($green-chelsea-cucumber, 10%);
+$jk-header-menu-toggle-bar-color: $white-spring-wood;
+$jk-header-menu-toggle-bar-color-hover: darken($white-spring-wood, 10%);
+$jk-header-menu-toggle-color: $green-chelsea-cucumber;
+$jk-header-menu-toggle-color-hover: darken($green-chelsea-cucumber, 10%);
