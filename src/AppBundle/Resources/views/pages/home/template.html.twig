@@ -1,0 +1,34 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block content %}
+    <div class="jk-home">
+        <div class="jk-home__informations">
+            <div id="jk-home-bio-container"
+                 class="jk-home__informations__bio"
+                 ontouchstart="this.classList.toggle('click');">
+                <div class="jk-home__informations__bio__container">
+                    <div class="jk-home__informations__bio__container__picture">
+
+                    </div>
+                    <div class="jk-home__informations__bio__container__description">
+                        {{ 'jk.home.bio.description.text' | trans | nl2br }}
+                    </div>
+                </div>
+
+                <div id="jk-home-bio-button"
+                   class="jk-home__informations__bio__button">
+                    <span class="jk-home__informations__bio__button__text">
+                        {{ 'jk.home.flip.button.text' | trans }}
+                    </span>
+                </div>
+
+            </div>
+            <div class="jk-home__informations__degrees">
+
+            </div>
+            <div class="jk-home__informations__jobs">
+
+            </div>
+        </div>
+    </div>
+{%  endblock %}

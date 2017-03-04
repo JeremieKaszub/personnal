@@ -1,0 +1,78 @@
+.jk-home {
+	@include container;
+	
+	margin-top: 15px;
+	
+	&__informations {
+		&__bio {
+			display: flex;
+			flex-direction: column;
+			perspective: 1000px;
+			
+			&.active {
+				.jk-home__informations__bio__container {
+					transform: rotateY(-180deg);
+				}
+			}
+			
+			&__container {
+				position: relative;
+				flex: 1;
+				transition: .64s;
+				margin-top: $jk-base-margin;
+				background-color: $jk-home-card-bg;
+				box-shadow: 0px 2px 2px 0px $jk-home-card-box-shadow-color;
+				border-radius: 2px;
+				padding: 15px;
+				min-height: 220px;
+				transform-style: preserve-3d;
+				
+				&__picture,
+				&__description {
+					position: absolute;
+					top: 15px;
+					right: 15px;
+					bottom: 15px;
+					left: 15px;
+					min-height: 220px;
+					backface-visibility: hidden;
+				}
+				
+				&__picture {
+					transform: rotateY(0deg);
+					z-index: 2;
+				}
+				
+				&__description {
+					transform: rotateY(180deg);
+					text-align: justify;
+				}
+			}
+			
+			&__button {
+				@include button-variant($jk-base-button-color, $jk-base-button-bg, $jk-base-button-border);
+				@include button-size($jk-base-button-padding-vertical, $jk-base-button-padding-horizontal, $jk-base-button-font-size, $jk-base-button-line-height, $jk-base-button-border-radius);
+				
+				flex: 1;
+				box-shadow: 0px 2px 2px 0px $jk-base-button-shadow-color;
+				border-top: 2px solid $jk-base-button-border-top-color;
+				border-bottom: 2px solid $jk-base-button-border-top-color;
+				border-right: 2px solid $jk-base-button-border-side-color;
+				border-left: 2px solid $jk-base-button-border-side-color;
+				margin-top: $jk-base-margin /2;
+				text-align: center;
+				
+				&:hover,
+				&:focus {
+					text-decoration: none;
+				}
+				
+				&__text {
+					font-family: 'robotoblack';
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
