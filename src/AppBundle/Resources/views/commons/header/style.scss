@@ -5,13 +5,50 @@
     
     &__nav {
         background-color: $jk-header-bg;
+        box-shadow: 0 0 2px 2px $jk-header-box-shadow-color;
+        border: 0;
         
         &__container {
             @include container;
             
             &__navbar-header {
                 &__link {
+                    float: none;
+                    height: 60px;
+                    line-height: 60px;
                     font-family: 'robotoblack';
+                }
+                
+                &__navbar-toggle {
+                    box-shadow: inset 0px 2px 2px 0px $jk-header-menu-toggle-inset-color;
+                    border: 0;
+                    
+                    &__container {
+                        margin: 4px;
+                        box-shadow: 0px 2px 2px 0px $jk-header-menu-toggle-inset-color;
+                        border-top: 2px solid $jk-header-menu-toggle-border-bottom;
+                        border-right: 2px solid $jk-header-menu-toggle-border-side;
+                        border-bottom: 2px solid $jk-header-menu-toggle-border-bottom;
+                        border-left: 2px solid $jk-header-menu-toggle-border-side;
+                        border-radius: 3px;
+                        background-color: $jk-header-menu-toggle-button-bg;
+                        padding: 9px 10px;
+                        
+                        &:hover {
+                            background-color: $jk-header-menu-toggle-color-hover;
+                            border-color: $jk-header-menu-toggle-border-color-hover;
+                        }
+    
+                        &:focus {
+                            background-color: $jk-header-menu-toggle-color;
+                            border-color: $jk-header-menu-toggle-border-color;
+        
+                            &:hover {
+                                background-color: $jk-header-menu-toggle-color-hover;
+                                border-color: $jk-header-menu-toggle-border-color-hover;
+                            }
+                        }
+                    }
                 }
             }
             
@@ -25,12 +62,8 @@
                                 transition: $jk-default-transition;
                                 margin-left: 5px;
                                 font-family: 'fontello';
-                                content: '\e9b5';
+                                content: '\e9b3';
                                 opacity: 0;
-                                
-                                @media(min-width: $screen-sm-min) {
-                                    
-                                }
                             }
                             
                             &:hover {

@@ -1,9 +1,10 @@
 @import 'bootstrap-sass-official/assets/stylesheets/bootstrap';
 
-
 @import 'fonts';
 @import 'mixins';
 @import 'variables';
 @import 'overwrites';
 
 @import '../views/commons/header/style';
+
+@import '../views/pages/home/style';

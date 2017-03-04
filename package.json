@@ -30,6 +30,8 @@
     "grunt-typescript": "^0.3.8"
   },
   "devDependencies": {
-    "grunt-contrib-compass": "^1.1.1"
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-node-webkit-builder": "^1.0.2",
+    "grunt-postcss": "^0.8.0"
   }
 }

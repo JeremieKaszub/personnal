@@ -2,12 +2,13 @@
 //******************
 //
 // Colors
+$white-alabaster: #fafafa;
 $white-spring-wood: #f3f6ee;
 $white-rose: #fff7f6;
 $grey-michka: #dad4dc;
-$green-chelsea-cucumber : #85aF4b;
-$brown-fuzzy-wuzzy : #bf6352;
-$pruple-eminence: #6f397e;
+$green-chelsea-cucumber: #85aF4b;
+$brown-fuzzy-wuzzy: #bf6352;
+$purple-eminence: #6f397e;
 $grey-masala: #3d3837;
 $grey-heavy-metal: #363832;
 $grey-baltic-sea: #282529;
@@ -18,16 +19,46 @@ $jk-default-font-family:  "robotoregular";
 // Animations
 $jk-default-transition: all .32s;
 //
+// Body
+$jk-default-body-color: lighten($grey-michka, 10%);
+//
+// Margins
+$jk-base-margin: 30px;
+//
+//Buttons
+$jk-base-button-padding-vertical: 9px;
+$jk-base-button-padding-horizontal: 10px;
+$jk-base-button-font-size: 14px;
+$jk-base-button-line-height: 20px;
+$jk-base-button-border-radius: 2px;
+$jk-base-button-color: $white-alabaster;
+$jk-base-button-bg: $purple-eminence;
+$jk-base-button-border: $purple-eminence;
+$jk-base-button-shadow-color: $grey-masala;
+$jk-base-button-border-top-color: lighten($purple-eminence, 20%);
+$jk-base-button-border-side-color:  lighten($purple-eminence, 10%);
+//
 // Header
-$jk-header-bg: $green-chelsea-cucumber;
+$jk-header-bg: $purple-eminence;
 $jk-header-height: 50px;
-$jk-header-logo-link-color: $white-spring-wood;
+$jk-header-box-shadow-color: $grey-masala;
+$jk-header-logo-link-color: $white-rose;
+$jk-header-menu-link-color-hover: lighten($purple-eminence, 30%);
 $jk-header-logo-link-color-hover: darken($white-spring-wood, 10%);
-$jk-header-menu-link-color-hover: darken($white-spring-wood, 10%);
-$jk-header-menu-link-color: $white-spring-wood;
-$jk-header-menu-toggle-border-color: $green-chelsea-cucumber;
-$jk-header-menu-toggle-border-color-hover: darken($green-chelsea-cucumber, 10%);
-$jk-header-menu-toggle-bar-color: $white-spring-wood;
-$jk-header-menu-toggle-bar-color-hover: darken($white-spring-wood, 10%);
-$jk-header-menu-toggle-color: $green-chelsea-cucumber;
-$jk-header-menu-toggle-color-hover: darken($green-chelsea-cucumber, 10%);
+$jk-header-menu-link-color: $white-rose;
+$jk-header-menu-toggle-border-color: $white-alabaster;
+$jk-header-menu-toggle-border-color-hover: darken($purple-eminence, 10%);
+$jk-header-menu-toggle-bar-color: $white-rose;
+$jk-header-menu-toggle-bar-color-hover: darken($white-rose, 10%);
+$jk-header-menu-toggle-color: $purple-eminence;
+$jk-header-menu-toggle-color-hover: darken($purple-eminence, 10%);
+$jk-header-menu-toggle-button-bg: $purple-eminence;
+$jk-header-menu-toggle-inset-color: $grey-masala;
+$jk-header-menu-toggle-border-bottom: lighten($purple-eminence, 20%);
+$jk-header-menu-toggle-border-side: lighten($purple-eminence, 10%);
+//
+// Home
+$jk-home-card-bg: $white-alabaster;
+$jk-home-card-border-color: $grey-michka;
+$jk-home-card-box-shadow-color: $grey-michka;
+

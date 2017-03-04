@@ -31,7 +31,8 @@ module.exports = function(grunt) {
         },
         watch: {
             css: {
-                files: ['src/AppBundle/Resources/styles/**/*.scss'],
+                files: ['src/AppBundle/Resources/styles/**/*.scss',
+                        'src/AppBundle/Resources/views/**/*/*/style.scss'],
                 tasks: ['css']
             },
             javascript: {

@@ -34,6 +34,14 @@
                 <source>jk.header.logo.link.text</source>
                 <target>Jérémie Kaszub</target>
             </trans-unit>
+            <trans-unit id="jk.home.bio.description.text">
+                <source>jk.home.bio.description.text</source>
+                <target>Quare hoc quidem praeceptum, cuiuscumque est, ad tollendam amicitiam valet; illud potius praecipiendum fuit, ut eam diligentiam adhiberemus in amicitiis comparandis, ut ne quando amare inciperemus eum, quem aliquando odisse possemus. Quin etiam si minus felices in diligendo fuissemus, ferendum id Scipio potius quam inimicitiarum tempus cogitandum putabat.</target>
+            </trans-unit>
+            <trans-unit id="jk.home.flip.button.text">
+                <source>jk.home.flip.button.text</source>
+                <target>Flip</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
