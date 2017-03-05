@@ -1,3 +1,20 @@
+@keyframes stretch {
+	0% {
+		transform: scale(1);
+		background-color: $jk-home-bio-light-bulb-start;
+	}
+	50% {
+		background-color: $jk-home-bio-light-bulb-start;
+	}
+	50% {
+		background-color: rgba($jk-home-bio-light-bulb-start, .5);
+	}
+	100% {
+		transform: scale(1.5);
+		background-color: $jk-home-bio-light-bulb-stop;
+	}
+}
+
 .jk-home {
 	@include container;
 	
@@ -7,6 +24,7 @@
 		&__bio {
 			display: flex;
 			flex-direction: column;
+			margin-top: $jk-base-margin;
 			perspective: 1000px;
 			
 			&.active {
@@ -16,14 +34,12 @@
 			}
 			
 			&__container {
+				@include cardDiv;
+				
 				position: relative;
 				flex: 1;
 				transition: .64s;
-				margin-top: $jk-base-margin;
-				background-color: $jk-home-card-bg;
-				box-shadow: 0px 2px 2px 0px $jk-home-card-box-shadow-color;
-				border-radius: 2px;
-				padding: 15px;
+				transition-delay: 1.28s;
 				min-height: 220px;
 				transform-style: preserve-3d;
 				
@@ -34,44 +50,223 @@
 					right: 15px;
 					bottom: 15px;
 					left: 15px;
-					min-height: 220px;
+					min-height: 190px;
 					backface-visibility: hidden;
 				}
 				
 				&__picture {
+					display: flex;
+					flex-direction: column;
+					transition: all 1.28s;
+					background-color: $jk-home-bio-picture-bg;
+					border-radius: 2px;
 					transform: rotateY(0deg);
+					text-align: center;
 					z-index: 2;
+					
+					&::before {
+						position: absolute;
+						top: 30px;
+						right: 0;
+						left: 0;
+						transition: all 1.28s;
+						margin: auto;
+						border-radius: 100%;
+						width: 54px;
+						height: 54px;
+						background-color: $jk-home-bio-light-bulb-start;
+						content: '';
+						opacity: 0;
+						z-index: -1;
+					}
+					
+					&.active {
+						background-color: $jk-home-bio-light-bulb-stop;
+						
+						&::before {
+							animation-name: stretch;
+							animation-duration: 1.28s;
+							animation-timing-function: ease-out;
+							animation-delay: 0s;
+							animation-direction: alternate;
+							animation-iteration-count: 1;
+							animation-fill-mode: none;
+							animation-play-state: running;
+							box-shadow: 0px 0px 160px 60px $jk-home-bio-light-bulb-stop;
+							background-color: transparent;
+							opacity: .6;
+						}
+						
+						.jk-home__informations__bio__container__picture {
+							&__icon,
+							&__label {
+								color: $jk-home-bio-content-hover-color;
+							}
+							
+						}
+					}
+					
+					&__icon {
+						flex: 1;
+						color: $jk-home-bio-icon-color;
+						font-size: 100px;
+					}
+					
+					&__label {
+						flex: 1;
+						font-size: 23px;
+						color: $jk-home-bio-label-color;
+					}
 				}
 				
 				&__description {
+					transition: all 1.28s;
+					background-color: $jk-home-bio-description-bg-light-off;
 					transform: rotateY(180deg);
 					text-align: justify;
+					
+					&.active {
+						background-color: $jk-home-bio-description-bg-light-on;
+					}
 				}
 			}
 			
 			&__button {
-				@include button-variant($jk-base-button-color, $jk-base-button-bg, $jk-base-button-border);
-				@include button-size($jk-base-button-padding-vertical, $jk-base-button-padding-horizontal, $jk-base-button-font-size, $jk-base-button-line-height, $jk-base-button-border-radius);
+				@include homeButton;
+				flex: 1;
+				transition: all .32s;
+			}
+		}
+		
+		&__skills {
+			display: flex;
+			flex-direction: column;
+			margin-top: $jk-base-margin;
+			
+			&__container {
+				@include cardDiv;
 				
 				flex: 1;
-				box-shadow: 0px 2px 2px 0px $jk-base-button-shadow-color;
-				border-top: 2px solid $jk-base-button-border-top-color;
-				border-bottom: 2px solid $jk-base-button-border-top-color;
-				border-right: 2px solid $jk-base-button-border-side-color;
-				border-left: 2px solid $jk-base-button-border-side-color;
-				margin-top: $jk-base-margin /2;
-				text-align: center;
 				
-				&:hover,
-				&:focus {
-					text-decoration: none;
+				&__list {
+					text-align: center;
+					
+					&__label {
+						font-size: 23px;
+						text-transform: capitalize;
+					}
+					
+					&__item {
+						display: flex;
+						flex-direction: row;
+						padding-top: $jk-base-margin /2;
+						padding-bottom: $jk-base-margin /2;
+						text-align: left;
+						list-style: none;
+						
+						&__label {
+							flex: 1;
+						}
+						
+						&__score {
+							flex: 2;
+							border: 1px solid $jk-home-skills-score-border;
+							border-radius: 10px;
+							overflow: hidden;
+							
+							&.apprentice,
+							&.journeyman,
+							&.expert,
+							&.artisan,
+							&.master {
+								&::before {
+									display: block;
+									border: 4px solid $jk-home-skills-score-inner-border;
+									border-radius: 9px;
+									height: 100%;
+									width: 0;
+									content: '';
+								}
+							}
+							
+							&.apprentice {
+								&::before {
+									transition: all, .32s;
+									background-color: $jk-home-apprentice-color;
+								}
+							}
+							
+							&.journeyman {
+								&::before {
+									transition: all, .64s;
+									background-color: $jk-home-journeyman-color;
+								}
+							}
+							
+							&.expert {
+								&::before {
+									transition: all, .96s;
+									background-color: $jk-home-expert-color;
+								}
+							}
+							
+							&.artisan {
+								&::before {
+									transition: all, 1.28s;
+									background-color: $jk-home-artisan-color;
+								}
+							}
+							
+							&.master {
+								&::before {
+									transition: all, 1.6s;
+									background-color: $jk-home-master-color;
+								}
+							}
+						}
+						
+						&.active {
+							.jk-home__informations__skills__container__list__item {
+								&__score {
+									&.apprentice {
+										&::before {
+											width: 20%;
+										}
+									}
+									
+									&.journeyman {
+										&::before {
+											width: 40%;
+										}
+									}
+									
+									&.expert {
+										&::before {
+											width: 60%;
+										}
+									}
+									
+									&.artisan {
+										&::before {
+											width: 80%;
+										}
+									}
+									
+									&.master {
+										&::before {
+											width: 100%;
+										}
+									}
+								}
+							}
+						}
+					}
 				}
-				
-				&__text {
-					font-family: 'robotoblack';
-					font-weight: bold;
-					text-transform: uppercase;
-				}
+			}
+			
+			&__button {
+				@include homeButton;
+				flex: 1;
 			}
 		}
 	}

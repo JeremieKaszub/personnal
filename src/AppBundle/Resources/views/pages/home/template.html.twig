@@ -7,10 +7,15 @@
                  class="jk-home__informations__bio"
                  ontouchstart="this.classList.toggle('click');">
                 <div class="jk-home__informations__bio__container">
-                    <div class="jk-home__informations__bio__container__picture">
-
+                    <div id="jk-home-bio-container-content"
+                         class="jk-home__informations__bio__container__picture">
+                        <em class="fontello-icon-lightbulb  jk-home__informations__bio__container__picture__icon"></em>
+                        <span class="jk-home__informations__bio__container__picture__label">
+                            {{ 'jk.home.bio.picture.label' | trans | nl2br }}
+                        </span>
                     </div>
-                    <div class="jk-home__informations__bio__container__description">
+                    <div id="jk-home-bio-container-description"
+                         class="jk-home__informations__bio__container__description">
                         {{ 'jk.home.bio.description.text' | trans | nl2br }}
                     </div>
                 </div>
@@ -23,7 +28,54 @@
                 </div>
 
             </div>
-            <div class="jk-home__informations__degrees">
+            <div class="jk-home__informations__skills">
+                <div class="jk-home__informations__skills__container">
+                    <ul class="jk-home__informations__skills__container__list">
+                        <span class="jk-home__informations__skills__container__list__label">Skill title</span>
+                        <li class="jk-home__informations__skills__container__list__item"
+                            data-jk-score-item>
+                            <span class="jk-home__informations__skills__container__list__item__label">
+                                Skill 1
+                            </span>
+                            <div class="jk-home__informations__skills__container__list__item__score master"></div>
+                        </li>
+                        <li class="jk-home__informations__skills__container__list__item"
+                            data-jk-score-item>
+                            <span class="jk-home__informations__skills__container__list__item__label">
+                                Skill 2
+                            </span>
+                            <div class="jk-home__informations__skills__container__list__item__score artisan"></div>
+                        </li>
+                        <li class="jk-home__informations__skills__container__list__item"
+                            data-jk-score-item>
+                            <span class="jk-home__informations__skills__container__list__item__label">
+                                Skill 3
+                            </span>
+                            <div class="jk-home__informations__skills__container__list__item__score expert"></div>
+                        </li>
+                        <li class="jk-home__informations__skills__container__list__item"
+                            data-jk-score-item>
+                            <span class="jk-home__informations__skills__container__list__item__label">
+                                Skill 4
+                            </span>
+                            <div class="jk-home__informations__skills__container__list__item__score journeyman"></div>
+                        </li>
+                        <li class="jk-home__informations__skills__container__list__item"
+                            data-jk-score-item>
+                            <span class="jk-home__informations__skills__container__list__item__label">
+                                Skill 5
+                            </span>
+                            <div class="jk-home__informations__skills__container__list__item__score apprentice"></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="jk-home-skills-button"
+                     class="jk-home__informations__skills__button">
+                    <span class="jk-home__informations__skills__button__text">
+                        {{ 'jk.home.reveal.button.text' | trans }}
+                    </span>
+                </div>
 
             </div>
             <div class="jk-home__informations__jobs">

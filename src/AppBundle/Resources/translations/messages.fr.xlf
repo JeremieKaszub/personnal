@@ -42,6 +42,14 @@
                 <source>jk.home.flip.button.text</source>
                 <target>Flip</target>
             </trans-unit>
+            <trans-unit id="jk.home.bio.picture.label">
+                <source>jk.home.bio.picture.label</source>
+                <target>Qui suis-je ?</target>
+            </trans-unit>
+            <trans-unit id="jk.home.reveal.button.text">
+                <source>jk.home.reveal.button.text</source>
+                <target>Reveal</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
