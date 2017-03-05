@@ -8,16 +8,28 @@ $white-rose: #fff7f6;
 $grey-michka: #dad4dc;
 $green-chelsea-cucumber: #85aF4b;
 $brown-fuzzy-wuzzy: #bf6352;
+$yellow-sunflower: #e9cc1c;
 $purple-eminence: #6f397e;
 $grey-masala: #3d3837;
 $grey-heavy-metal: #363832;
 $grey-baltic-sea: #282529;
+$green-malachite: #3aee5e;
+$green-starship: #d8ee3a;
+$yellow-lemon: #f3f514;
+$orange-buttercup: #f7a918;
+$red-tabasco: #f53214;
 //
 // Fonts
 $jk-default-font-family:  "robotoregular";
 //
 // Animations
 $jk-default-transition: all .32s;
+$jk-home-apprentice-color: $red-tabasco;
+$jk-home-journeyman-color: $orange-buttercup;
+$jk-home-expert-color: $yellow-lemon;
+$jk-home-artisan-color: $green-starship;
+$jk-home-master-color: $green-malachite;
+$jk-home-skills-score-inner-border: $white-alabaster;
 //
 // Body
 $jk-default-body-color: lighten($grey-michka, 10%);
@@ -61,4 +73,14 @@ $jk-header-menu-toggle-border-side: lighten($purple-eminence, 10%);
 $jk-home-card-bg: $white-alabaster;
 $jk-home-card-border-color: $grey-michka;
 $jk-home-card-box-shadow-color: $grey-michka;
+$jk-home-bio-picture-bg: $grey-masala;
+$jk-home-bio-icon-color: $white-alabaster;
+$jk-home-bio-label-color: $white-alabaster;
+$jk-home-bio-light-bulb-start: $yellow-sunflower;
+$jk-home-bio-light-bulb-inter: lighten($yellow-sunflower, 20%);
+$jk-home-bio-light-bulb-stop: $white-alabaster;
+$jk-home-bio-content-hover-color: $grey-masala;
+$jk-home-bio-description-bg-light-off: $grey-masala;
+$jk-home-bio-description-bg-light-on: $white-alabaster;
+$jk-home-skills-score-border: $grey-masala;
 

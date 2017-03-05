@@ -15,3 +15,34 @@
 @mixin container-fluid {
 	@include container-fixed();
 }
+
+@mixin homeButton {
+	@include button-variant($jk-base-button-color, $jk-base-button-bg, $jk-base-button-border);
+	@include button-size($jk-base-button-padding-vertical, $jk-base-button-padding-horizontal, $jk-base-button-font-size, $jk-base-button-line-height, $jk-base-button-border-radius);
+	
+	box-shadow: 0px 2px 2px 0px $jk-base-button-shadow-color;
+	border-top: 2px solid $jk-base-button-border-top-color;
+	border-bottom: 2px solid $jk-base-button-border-top-color;
+	border-right: 2px solid $jk-base-button-border-side-color;
+	border-left: 2px solid $jk-base-button-border-side-color;
+	margin-top: $jk-base-margin /2;
+	text-align: center;
+	
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+	
+	&__text {
+		font-family: 'robotoblack';
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
+
+@mixin cardDiv {
+	background-color: $jk-home-card-bg;
+	box-shadow: 0px 2px 2px 0px $jk-home-card-box-shadow-color;
+	border-radius: 2px;
+	padding: 15px;
+}
